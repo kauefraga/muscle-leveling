@@ -9,7 +9,7 @@ import './main.css';
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <BrowserRouter>
-      <Theme>
+      <Theme accentColor="blue" radius="none">
         <App />
       </Theme>
     </BrowserRouter>
