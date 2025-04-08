@@ -1,6 +1,7 @@
 import { ClockIcon, Cross1Icon } from '@radix-ui/react-icons';
 import { Box, Button, Flex, Heading, IconButton, Text } from '@radix-ui/themes';
 import { Link } from 'react-router';
+import { Exercise, Exercises } from '../components/exercises';
 import { getGreeting } from '../utils/greeting';
 
 const exercises = ['Flexões 100', 'Agachamentos 100', 'Abdominais 100', 'Corrida 10km'];
@@ -47,25 +48,7 @@ export function App() {
             </Box>
           </Flex>
 
-          <Flex direction="column" gap="1">
-            <Flex justify="between">
-              <Heading as="h3" size="3">Exercício</Heading>
-              <Text weight="bold">Repetições</Text>
-            </Flex>
-
-            <ul>
-              {exercises.map((e) => {
-                const [exercise, repetitionsCount] = e.split(' ');
-
-                return (
-                  <li className="flex justify-between gap-2" key={exercise}>
-                    <p>{exercise}</p>
-                    <p>{repetitionsCount}</p>
-                  </li>
-                );
-              })}
-            </ul>
-          </Flex>
+          <Exercises exercises={exercises as Exercise[]} />
 
           <Flex align="center" gap="3" justify="center">
             <ClockIcon width="24" height="24" />
